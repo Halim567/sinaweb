@@ -48,6 +48,11 @@ export const loginAction = async (_currentState: any, { nomorInduk, password }: 
         return { success: false, error: "Terjadi kesalahan, coba lagi nanti" };
     }
 
+    if (result.length === 0) return {
+        success: false,
+        error: "Nomor induk atau password salah"
+    };
+
     const userData = result[0];
     if (!await bcrypt.compare(password, userData.password)) return {
         success: false,
@@ -57,4 +62,4 @@ export const loginAction = async (_currentState: any, { nomorInduk, password }: 
     await createSession({ id: userData.idPengguna, nama: userData.namaPengguna, role: userData.role });
     
     redirect("/elearning");
-}
+};

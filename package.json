@@ -7,8 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "db:pull": "pnpm drizzle-kit pull --dialect=postgresql --url=postgres://neondb_owner:QyXk9OTJ1AzS@ep-flat-leaf-a1f11ql0-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require --out=libs/server/database"
-  },
+    "db:pull": "pnpm drizzle-kit pull --dialect=postgresql --url=postgres://neondb_owner:QyXk9OTJ1AzS@ep-flat-leaf-a1f11ql0-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require --out=libs/server/database",
+    "git-push": "git add . && git commit -m \"$npm_config_name\" && git push"
+},
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
     "@neondatabase/serverless": "^0.10.4",
