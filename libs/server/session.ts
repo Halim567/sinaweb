@@ -21,6 +21,7 @@ export const verifyJwt = async () => {
     }));
 
     if (error !== null) {
+        console.error(error);
         return { success: false, payload: null };
     }
 
