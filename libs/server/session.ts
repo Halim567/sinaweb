@@ -20,10 +20,10 @@ export const verifyJwt = async () => {
         algorithms: ['HS512']
     }));
 
-    if (error !== null) {
-        console.error(error);
-        return { success: false, payload: null };
-    }
+    if (error !== null) return { 
+        success: false, 
+        payload: null 
+    };
 
     return { success: true, payload: result.payload }
 };
