@@ -8,7 +8,7 @@ import { and, db, eq, sql, tbAccount, tbAdmin, tbGuru, tbSiswa } from "~/libs/se
 import bcrypt from "bcryptjs";
 
 export const loginAction = async (_currentState: any, { nomorInduk, password }:  LoginSchemaType) => {
-    if ((await verifyJwt()).success) redirect("/login");
+    if ((await verifyJwt()).success) redirect("/elearning");
 
     const formData = await safeParseAsync(loginSchema, { nomorInduk, password });
     if (formData.issues !== undefined) return { 
